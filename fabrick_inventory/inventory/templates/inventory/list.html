@@ -1,0 +1,36 @@
+{% extends "inventory/base.html" %}
+
+{% block content %}
+<section class="content">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Global Inventory</h3>
+    </div>
+
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Cutting</th>
+            <th>Status</th>
+            <th>Location</th>
+            <th>Units</th>
+            <th>Aging</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in inventory %}
+          <tr>
+            <td>{{ row.cutting }}</td>
+            <td>{{ row.status }}</td>
+            <td>{{ row.location }}</td>
+            <td>{{ row.units }}</td>
+            <td>{{ row.aging_days }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}
